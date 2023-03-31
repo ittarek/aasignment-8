@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./Home.css";
 import SingleCard from "./../singleCard/SingleCard";
 
-const Home = ({ handleBookMark }) => {
+const Home = ({handleCard,handleMinutes}) => {
   const [programers, setProgramers] = useState([]);
   useEffect(() => {
     fetch("data.json")
@@ -13,11 +13,7 @@ const Home = ({ handleBookMark }) => {
   return (
     <div className="">
       {programers.map((programer) => (
-        <SingleCard
-          handleBookMark={handleBookMark}
-          programer={programer}
-          key={programer.id}
-        ></SingleCard>
+      <SingleCard programer={programer} key={programer.id} handleCard={handleCard} handleMinutes={handleMinutes}></SingleCard>
       ))}
     </div>
   );
