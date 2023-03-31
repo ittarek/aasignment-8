@@ -44,7 +44,7 @@ function App() {
         <div className="row single-card  outline-0 col-md-8 col-sm-12 p-3 g-2">
           <Home handleCard={handleCard} handleMinutes={handleMinutes}></Home>
         </div>
-        <div className="card col-md-4  col-sm-12 p-3 g-2 bg-info ">
+        <div className="card col-md-4  col-sm-12 p-3 g-2 bg-gray ">
           <SideCard
             bookmarkedTitle={bookmarkedTitle}
             timing={timing}
