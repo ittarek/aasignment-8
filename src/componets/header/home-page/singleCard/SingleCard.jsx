@@ -9,42 +9,47 @@ import { ToastContainer, toast } from "react-toastify";
 const SingleCard = ({ programer, handleCard, handleMinutes }) => {
   const { authorName, id, Time, title, coverImage, authorImage, publishDate } =
     programer;
-  // toast function
-  const notify = () => toast("AllReady Book marked !!");
+  
 
   return (
-    <div className="programer-container card w-100 mb-5 p-4">
-      <div className="programer-card">
-        <img className="img-fluid w-100 rounded h-25" src={coverImage} alt="" />
-        <div className="programer-heading d-flex justify-content-between">
-          <div className="author-details d-flex mt-3">
-            <div className="author-image me-3">
-              <img className="img-fluid" src={authorImage} alt="" />
+    <div className="programer-container card mb-5 p-4">
+      <div className="programer-card h-100">
+        <img
+          className="card-img-top img-fluid w-100 h-50 rounded"
+          src={coverImage}
+          alt=""
+        />
+        <div className="card-body">
+          <div className="programer-heading d-flex justify-content-between">
+            <div className="author-details d-flex mt-3">
+              <div className="author-image me-1">
+                <img className="img-fluid" src={authorImage} alt="" />
+              </div>
+              <div className="nameAndDate">
+                <p className="fw-bold">{authorName}</p>
+                <p className="text-secondary">{publishDate}</p>
+              </div>
             </div>
-            <div className="nameAndDate">
-              <p>{authorName}</p>
-              <p>{publishDate}</p>
+            <div className="read-time">
+              {Time} <span className="me-1">min read</span>
+              <button onClick={() => handleCard(title)}>
+                {" "}
+                <FontAwesomeIcon icon={faBookmark} />{" "}
+                { <ToastContainer />}
+              
+              </button>
             </div>
           </div>
-          <div className="read-time mt-3">
-            {Time} min read
-            <button onClick={() => handleCard(title)}>
-              {" "}
-              <FontAwesomeIcon icon={faBookmark}  />{" "}
-              {/* <ToastContainer />
-              onClick={notify} */}
+          <div className="title text-start">
+            <p className="fw-bold fs-3">{title}</p>
+
+            <button
+              onClick={() => handleMinutes(Time)}
+              className="btn text-secondary card-footer"
+            >
+              <u className="">Mark as Read</u>
             </button>
           </div>
-        </div>
-        <div className="title text-start">
-          <p className="fw-bold fs-3">{title}</p>
-
-          <button
-            onClick={() => handleMinutes(Time)}
-            className="btn text-secondary"
-          >
-            <u>Mark as Read</u>
-          </button>
         </div>
       </div>
     </div>

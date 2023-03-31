@@ -3,9 +3,9 @@
 }
 @media screen and (min-width: 776px) {
   .main-item {
-          flex-wrap: nowrap !important;
+          /* flex-wrap: nowrap !important;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-between; */
     
   }
 }
