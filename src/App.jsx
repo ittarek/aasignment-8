@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./componets/header/Header";
-import Home from "./componets/header/home-page/home/Home";
-import SideCard from "./componets/header/home-page/home/sideCard/SideCard";
+import Header from "./componets/component/Header";
+import Home from "./componets/component/home-page/home/Home";
+import SideCard from "./componets/component/home-page/home/sideCard/SideCard";
 import Question from "./componets/Questions/Question";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   // toast function
-  const notify = () => toast("AllReady Book marked this blog !!");
+  // const notify = () => toast("AllReady Book marked this blog !!" );
+  const notify = () =>
+    toast("AllReady Book marked this blog !!!", {
+      icon: "👏",
+    });
   //  bookmark add title
   const [bookmarkedTitle, setBookmarkedTitle] = useState([]);
 
